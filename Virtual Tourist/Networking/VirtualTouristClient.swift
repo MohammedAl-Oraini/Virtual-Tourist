@@ -18,7 +18,7 @@ class VirtualTouristClient {
     
     class func getPhotosInfo (longitude:Double,latitude:Double,page:Int,completion: @escaping ([FlickerPhoto],Int?, Error?) -> Void) {
         
-        let request = URLRequest(url: URL(string: "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(VirtualTouristClient.apiKey)&bbox=\(longitude)%2C\(latitude)%2C\(longitude + 0.1)%2C\(latitude + 0.1)&content_type=1&media=photos&extras=url_q&per_page=21&page=\(page)&format=json&nojsoncallback=1")!)
+        let request = URLRequest(url: URL(string: "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(VirtualTouristClient.apiKey)&bbox=\(longitude)%2C\(latitude)%2C\(longitude + 0.1)%2C\(latitude + 0.1)&content_type=1&media=photos&extras=url_z&per_page=21&page=\(page)&format=json&nojsoncallback=1")!)
         
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in

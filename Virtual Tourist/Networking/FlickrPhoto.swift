@@ -18,6 +18,6 @@ struct FlickerPhoto:Codable {
         case id
         case owner
         case secret
-        case imageUrl = "url_q"
+        case imageUrl = "url_z"
     }
 }

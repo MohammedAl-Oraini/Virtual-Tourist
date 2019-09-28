@@ -84,6 +84,11 @@ class PhotoAlbumCollectionViewController: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        imageCollection.removeAll()
+    }
+    
     //MARK: - set up methods
     
     func setupFlowLayout() {

@@ -34,6 +34,7 @@ class TravelLocationsMapViewController: UIViewController {
     
     var editState:Bool = false
     var navigationBarTintColor:UIColor?
+    var titleTextColor:[NSAttributedString.Key : Any]?
     
     //MARK: - app life cycle
     
@@ -42,6 +43,7 @@ class TravelLocationsMapViewController: UIViewController {
         mapView.delegate = self
         navigationItem.rightBarButtonItem = editButtonItem
         navigationBarTintColor = navigationController?.navigationBar.barTintColor
+        titleTextColor = navigationController?.navigationBar.titleTextAttributes
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -86,7 +88,7 @@ class TravelLocationsMapViewController: UIViewController {
             navigationItem.title = "Virtual Tourist"
             navigationController?.navigationBar.barTintColor = navigationBarTintColor
             navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.07843137255, green: 0.5568627451, blue: 1, alpha: 1)
-            let titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
+            let titleTextAttributes = titleTextColor
             navigationController?.navigationBar.titleTextAttributes = titleTextAttributes
             editState = false
         }
